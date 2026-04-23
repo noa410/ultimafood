@@ -1,1 +1,917 @@
-<!DOCTYPE html><html><head><title>Ultima Food</title></head><body><h1>Coming soon</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimafood — Maximum Benefits Per Calorie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #F7F3ED;
+            --warm-white: #FAF8F5;
+            --earth-dark: #2C2416;
+            --earth-medium: #4A3F2E;
+            --earth-light: #6B5B4A;
+            --olive: #5C6B3A;
+            --olive-light: #7A8F52;
+            --terracotta: #A0522D;
+            --terracotta-soft: #C17A4E;
+            --gold: #B8956A;
+            --sage: #8B9A7A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: var(--earth-dark);
+            background: var(--cream);
+            line-height: 1.75;
+            letter-spacing: 0.01em;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--olive), var(--gold), var(--terracotta-soft));
+        }
+
+        .hero-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--earth-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--olive);
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+        }
+
+        .hero-divider {
+            width: 80px;
+            height: 1px;
+            background: var(--gold);
+            margin: 1.5rem auto;
+        }
+
+        .hero-values {
+            max-width: 700px;
+            font-size: 0.9rem;
+            color: var(--earth-light);
+            line-height: 2;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero-img {
+            margin-top: 3rem;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .hero-img img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(44, 36, 22, 0.12);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--earth-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--olive);
+        }
+
+        .set-number {
+            display: inline-block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 0.3rem 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Philosophy */
+        .philosophy {
+            background: var(--earth-dark);
+            color: var(--cream);
+            text-align: center;
+        }
+
+        .philosophy h2 {
+            color: var(--cream);
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            margin-bottom: 2rem;
+        }
+
+        .philosophy p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 2;
+            color: rgba(247, 243, 237, 0.85);
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .philosophy-item {
+            padding: 1.5rem;
+            border: 1px solid rgba(184, 149, 106, 0.3);
+        }
+
+        .philosophy-item h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .philosophy-item p {
+            font-size: 0.85rem;
+            color: rgba(247, 243, 237, 0.7);
+            line-height: 1.6;
+        }
+
+        /* Sets */
+        .set-section {
+            background: var(--warm-white);
+        }
+
+        .set-section:nth-child(even) {
+            background: var(--cream);
+        }
+
+        .set-intro {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .set-intro .set-desc {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--earth-medium);
+            margin-bottom: 0.5rem;
+        }
+
+        .set-intro .intake {
+            font-size: 0.85rem;
+            color: var(--earth-light);
+            letter-spacing: 0.05em;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .product-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 2px;
+            box-shadow: 0 4px 20px rgba(44, 36, 22, 0.06);
+        }
+
+        .product-card h3 {
+            font-size: 1.4rem;
+            color: var(--earth-dark);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--cream);
+        }
+
+        .product-card p {
+            font-size: 0.9rem;
+            color: var(--earth-medium);
+            line-height: 1.8;
+        }
+
+        .product-card .highlight {
+            color: var(--olive);
+            font-weight: 500;
+        }
+
+        .overview {
+            background: white;
+            padding: 2rem;
+            border-radius: 2px;
+            box-shadow: 0 4px 20px rgba(44, 36, 22, 0.06);
+            margin-bottom: 2.5rem;
+        }
+
+        .overview h3 {
+            font-size: 1.1rem;
+            color: var(--earth-dark);
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .overview ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .overview li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--earth-medium);
+            line-height: 1.8;
+        }
+
+        .overview li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 6px;
+            height: 6px;
+            background: var(--olive);
+            border-radius: 50%;
+        }
+
+        .details-block {
+            background: white;
+            padding: 2rem;
+            border-radius: 2px;
+            box-shadow: 0 4px 20px rgba(44, 36, 22, 0.06);
+            margin-bottom: 2rem;
+        }
+
+        .details-block p {
+            font-size: 0.9rem;
+            color: var(--earth-medium);
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .details-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .packaging {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border: 1px solid var(--gold);
+        }
+
+        .packaging h4 {
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .packaging p {
+            font-size: 0.9rem;
+            color: var(--earth-medium);
+        }
+
+        .nutrition {
+            background: var(--earth-dark);
+            color: var(--cream);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .nutrition h4 {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .nutrition p {
+            font-size: 0.9rem;
+            color: rgba(247, 243, 237, 0.9);
+        }
+
+        .ingredients {
+            font-size: 0.85rem;
+            color: var(--earth-light);
+            line-height: 1.8;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-top: 1px solid rgba(184, 149, 106, 0.3);
+            border-bottom: 1px solid rgba(184, 149, 106, 0.3);
+        }
+
+        .ingredients strong {
+            color: var(--earth-dark);
+            font-weight: 500;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: var(--earth-light);
+            font-style: italic;
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--cream);
+        }
+
+        /* Images */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 4px 15px rgba(44, 36, 22, 0.08);
+        }
+
+        .image-full {
+            margin: 2rem 0;
+        }
+
+        .image-full img {
+            width: 100%;
+            border-radius: 2px;
+            box-shadow: 0 8px 30px rgba(44, 36, 22, 0.1);
+        }
+
+        .image-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .image-pair img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 4px 15px rgba(44, 36, 22, 0.08);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--earth-dark);
+            color: var(--cream);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        footer .brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        footer .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        footer .values {
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(247, 243, 237, 0.6);
+            line-height: 2;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .image-pair {
+                grid-template-columns: 1fr;
+            }
+            .image-pair img {
+                height: 280px;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-brand">Ultimafood</div>
+    <div class="hero-tagline">Maximum benefits per calorie!</div>
+    <div class="hero-divider"></div>
+    <div class="hero-values">
+        Premium foods. Homemade with love. 100% handmade. 100% natural ingredients. Balanced nutrient composition. Rich in vitamins, minerals, and bioactive compounds. Traditional techniques. Handcrafted from carefully selected raw ingredients without industrial processing or ultra-processed additives.
+    </div>
+    <div class="hero-img">
+        <img src="u1.jpg" alt="Ultimafood artisan snacks with tea">
+    </div>
+</section>
+
+<!-- Philosophy -->
+<section class="philosophy">
+    <div class="container">
+        <h2>Our Philosophy</h2>
+        <p>To enhance the bioavailability of active compounds, plant raw materials undergo a complex pre-processing using traditional non-industrial techniques, including maceration with coconut oil, grinding oil seeds into a paste, soaking to remove antinutrients, and gentle drying for moisture removal and sanitation. We do not use high-speed industrial mills or equipment that could destroy bioactive compounds.</p>
+        <div class="philosophy-grid">
+            <div class="philosophy-item">
+                <h4>100% Natural</h4>
+                <p>No artificial flavor enhancers, colorings, preservatives, or ultra-processed ingredients</p>
+            </div>
+            <div class="philosophy-item">
+                <h4>Handcrafted</h4>
+                <p>Traditional techniques from carefully selected raw ingredients</p>
+            </div>
+            <div class="philosophy-item">
+                <h4>Balanced</h4>
+                <p>Complete nutrients, micronutrients, and bioactive substances in natural form</p>
+            </div>
+            <div class="philosophy-item">
+                <h4>Vegan Friendly</h4>
+                <p>Suitable for vegans. Sugar-free. Gluten-free. Non-GMO.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Set 1 -->
+<section class="set-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="set-number">Set 1</div>
+            <h2>Plant-based snacks for everyday sports nutrition</h2>
+            <div class="subtitle">Recommended daily intake – 3 servings (90 g)</div>
+        </div>
+
+        <div class="set-intro">
+            <div class="set-desc">Proteína Umami – 1 serving &nbsp;|&nbsp; Minerales Verdes – 1 serving &nbsp;|&nbsp; Minerales Rojos – 1 serving</div>
+        </div>
+
+        <div class="packaging">
+            <h4>Packaging options</h4>
+            <p>Pack of 15 pcs. for 5 days &nbsp;|&nbsp; Pack of 9 pcs. for 3 days</p>
+        </div>
+
+        <div class="image-gallery">
+            <img src="n1.png" alt="Set 1 products">
+            <img src="u2.jpg" alt="Artisan snacks presentation">
+        </div>
+
+        <div class="overview">
+            <h3>Overview</h3>
+            <ul>
+                <li>An exquisite, deep natural umami flavor with notes of sweetness, saltiness, and spice is achieved through a carefully selected composition and exclusive traditional processing techniques.</li>
+                <li>Exceptionally high concentration of complete and balanced plant protein. Protein digestibility is enhanced through processing with natural plant enzymes.</li>
+                <li>A rich composition of minerals and vitamins in their natural form is ensured by a wide variety of dehydrated vegetables and seaweed.</li>
+            </ul>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <h3>Proteína Umami</h3>
+                <p><span class="highlight">Contains more protein with an ideal amino acid profile than meat!</span> The use of MCT oil as an energy source with very low carbohydrate content makes this product an ideal solution for an active lifestyle.</p>
+            </div>
+            <div class="product-card">
+                <h3>Minerales Verdes & Minerales Rojos</h3>
+                <p>The use of a large amount of dehydrated vegetables and seaweed makes these products a highly concentrated source of a wide range of essential minerals and vitamins in their natural form and in sufficient quantities. Significant amounts of natural dietary fiber support healthy digestion and support the body's natural detox processes.</p>
+            </div>
+        </div>
+
+        <div class="details-block">
+            <p>A carefully calibrated fermentation process turns the products in this set into an excellent source of bioavailable, easily digestible protein, ideal for supporting endurance and boosting metabolism.</p>
+            <p>Due to the high content of natural dehydrated vegetables and seaweed, this set helps replenish vitamins and minerals in their natural form and synergy, enriched with bioactive compounds naturally present in plants. Dehydration increases nutrient concentration by 10–20 times compared to fresh products, allowing adequate intake without overloading the digestive system, without relying on industrial supplements, and maintaining high physical and mental performance without depleting the body's reserves.</p>
+            <p>High levels of natural plant fiber support healthy digestion, support the body's natural detox processes, and enhance gut microbiota health.</p>
+            <p>A balanced fat composition enriched with omega-3 sources ensures an optimal fatty acid ratio for cardiovascular health, while MCT provides a readily available energy source for intense activity.</p>
+            <p>Low in carbohydrates increases endurance and helps reduce body fat.</p>
+        </div>
+
+        <div class="ingredients">
+            <strong>Ingredients:</strong> Pea protein, nutritional yeast, sesame, pecan, flaxseed, chia seeds, pumpkin seeds, MCT oil, carrot, beetroot, tomato, spinach, broccoli, celery, spirulina, nopal, artichoke, shiitake, onion, white garlic, black garlic, oregano, basil, cumin, rosemary, black pepper, fennel, thyme, caraway, coriander, black cumin, Himalayan salt
+        </div>
+
+        <div class="nutrition">
+            <h4>Daily intake (3 servings)</h4>
+            <p>protein 29 g, fat 32.5 g (including 9 g MCT), carbohydrates 10 g, fiber 35 g, calories 432 kcal.</p>
+        </div>
+
+        <div class="disclaimer">
+            This is a food product. Contains plant ingredients known for their health benefits but is not a medicine and is not intended to treat or prevent diseases. If you have health concerns, consult your physician.
+        </div>
+    </div>
+</section>
+
+<!-- Set 2 -->
+<section class="set-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="set-number">Set 2</div>
+            <h2>Plant-based snacks for energy and productivity</h2>
+            <div class="subtitle">Recommended daily intake – 3 servings (90 g)</div>
+        </div>
+
+        <div class="set-intro">
+            <div class="set-desc">Energía Prolongada – 1 serving &nbsp;|&nbsp; Foco Vital – 1 serving &nbsp;|&nbsp; Equilibrio Feliz – 1 serving</div>
+        </div>
+
+        <div class="packaging">
+            <h4>Packaging options</h4>
+            <p>Pack of 15 pcs. &nbsp;|&nbsp; Pack of 9 pcs.</p>
+        </div>
+
+        <div class="image-gallery">
+            <img src="n2_1.png" alt="Set 2 box presentation">
+            <img src="n2_2.png" alt="Set 2 products on plate">
+        </div>
+
+        <div class="overview">
+            <h3>Overview</h3>
+            <ul>
+                <li>A delicate, moderately sweet flavor with notes of cocoa, cinnamon, and tropical fruits.</li>
+                <li>A unique combination of plants widely known for their stimulating, energizing, and adaptogenic effects, traditionally used to combat fatigue, stress, and tension.</li>
+                <li>Contains no synthesized or isolated food additives or extracts. Only natural plant-based ingredients, processed using traditional methods to preserve their benefits and improve absorption.</li>
+            </ul>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <h3>Energía Prolongada</h3>
+                <p>A tonic product formulated with 5 natural sources of caffeine with different release profiles: black coffee, green coffee, green tea, mate, and guarana. This combination provides a smooth and long-lasting energizing effect.</p>
+                <p style="margin-top:1rem;">Moderate caffeine content, similar to one strong cup of coffee (around 200 mg), is released gradually into the bloodstream over 4–6 hours. As a result, the effect is smoother than coffee but longer-lasting, helping you feel sustained energy without overstimulation throughout the day. Suitable even for individuals sensitive to stimulation.</p>
+            </div>
+            <div class="product-card">
+                <h3>Foco Vital</h3>
+                <p>A stimulating product featuring a carefully selected blend of adaptogenic plants: ginseng, eleuthero, rhodiola, gotu kola, ginkgo biloba, schisandra, pollen, maca, and ashwagandha.</p>
+                <p style="margin-top:1rem;">This composition supports both mental and physical performance, helps reduce the effects of stress, improves metabolism, and combats fatigue. It also includes plants known to support focus, memory, and mental clarity, strengthen the immune system, and gently regulate blood sugar and hormonal balance.</p>
+                <p style="margin-top:1rem;">The dosage provides a mild cumulative effect and is designed for continuous use. If a stronger effect is desired, up to 2 servings per day can be consumed, but after 3–4 weeks it is recommended to take a 1–2 week break.</p>
+            </div>
+            <div class="product-card">
+                <h3>Equilibrio Feliz</h3>
+                <p>An anti-stress product combining cocoa, cinnamon, nutmeg, ashwagandha, maca, pollen, and medicinal herbs.</p>
+                <p style="margin-top:1rem;">This composition helps stabilize emotional state and improve mood. It supports the production of serotonin and dopamine, reduces anxiety levels, provides a mild energizing and balancing effect, lowers cortisol levels, and increases overall energy.</p>
+            </div>
+        </div>
+
+        <div class="details-block">
+            <p>All three products have a delicate, slightly sweet taste of natural honey (in the vegan version, agave syrup is used instead of honey) and contain complete plant-based pea protein along with a balanced composition of plant fats, optimized for omega-3 and omega-6 content.</p>
+            <p>To enhance the bioavailability of active compounds, plant raw materials undergo a complex pre-processing using traditional non-industrial techniques, including maceration with coconut oil, grinding oil seeds into a paste, soaking to remove antinutrients, and gentle drying for moisture removal and sanitation. We do not use high-speed industrial mills or equipment that could destroy bioactive compounds.</p>
+            <p>Suitable for vegans (please note that both vegan and non-vegan versions are available). Sugar-free. Gluten-free. Non-GMO. Contains no artificial flavor enhancers, colorings, preservatives, or other ultra-processed ingredients.</p>
+            <p>Provides your body with all essential nutrients, micronutrients, and bioactive substances in their natural form and highest possible concentration.</p>
+            <p><span class="highlight">An ideal choice for boosting performance and maintaining emotional balance in a fast-paced, high-stress lifestyle!</span></p>
+        </div>
+
+        <div class="ingredients">
+            <strong>Ingredients:</strong> Pea protein, sesame, pecan, flaxseed, chia seeds, walnut, Brazil nut, cashew, hazelnut, pumpkin seeds, cocoa, cinnamon, turmeric, ginger, coconut oil, stevia, nutmeg, maca, ashwagandha, ginseng, rhodiola, gotu kola, ginkgo biloba, black coffee, green coffee, green tea, mate, guarana, lemon balm, mint, jasmine, lemongrass, echinacea, chamomile, valerian root, basil, linden, sage, neem, St. John's wort, passionflower, anise, cardamom, clove, fennel, black cumin, dried apricot, kiwi, cranberry, Himalayan salt
+        </div>
+
+        <div class="nutrition">
+            <h4>Daily intake (3 servings)</h4>
+            <p>protein 11 g, fat 20 g, carbohydrates 32 g, fiber 11 g, calories 352 kcal</p>
+        </div>
+
+        <div class="disclaimer">
+            This is a food product. Contains plant ingredients known for their health benefits but is not a medicine and is not intended to treat or prevent diseases. If you have health concerns, consult your physician.
+        </div>
+    </div>
+</section>
+
+<!-- Set 3 -->
+<section class="set-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="set-number">Set 3</div>
+            <h2>Plant-based snacks to support balance and resilience</h2>
+            <div class="subtitle">Recommended daily intake – 3 servings (90 g)</div>
+        </div>
+
+        <div class="set-intro">
+            <div class="set-desc">Fuerza Botánica – 1 serving &nbsp;|&nbsp; Defensa Botánica – 1 serving &nbsp;|&nbsp; Protección Botánica – 1 serving</div>
+        </div>
+
+        <div class="packaging">
+            <h4>Packaging options</h4>
+            <p>Pack of 15 pcs. &nbsp;|&nbsp; Pack of 9 pcs.</p>
+        </div>
+
+        <div class="image-gallery">
+            <img src="n3_1.png" alt="Set 3 box">
+            <img src="n3_2.jpg" alt="Set 3 green hearts">
+            <img src="n3_3.png" alt="Set 3 single piece">
+        </div>
+
+        <div class="overview">
+            <h3>Overview</h3>
+            <ul>
+                <li>A delicate, slightly sweet taste with a rich aroma of spices and herbs makes this product a perfect dessert, ideally paired with coffee, tea, and refreshing fruit drinks.</li>
+                <li>A rich composition of natural plants, roots, herbs, and spices, widely used in culinary traditions and folk medicine across cultures, helps support the body's overall condition and resilience against environmental factors, infections, and stress.</li>
+                <li>A light yet highly nutritious base makes this product an ideal snack — not only visually appealing and delicious, but also convenient, practical, compact, and easy to store.</li>
+                <li>The formulations are based on traditional Ayurvedic culinary recipes.</li>
+                <li>Contains only natural plant-based ingredients. The exact composition of bioactive compounds may vary depending on growing conditions. Health benefits are not confirmed by medical studies.</li>
+            </ul>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <h3>Fuerza Botánica</h3>
+                <p>An anti-inflammatory product featuring a powerful blend of more than 20 herbs and spices known for their ability to help reduce inflammation, including joint inflammation, skin inflammation, and inflammation in the respiratory system and other areas.</p>
+            </div>
+            <div class="product-card">
+                <h3>Defensa Botánica</h3>
+                <p>An anti-infective product containing more than 25 plants, herbs, spices, and roots known for their ability to help inhibit the development of and support the body in fighting various types of infections — bacterial, viral, fungal, and parasitic.</p>
+            </div>
+            <div class="product-card">
+                <h3>Protección Botánica</h3>
+                <p>An antioxidant product. Oxidative stress is one of the scientifically recognized factors that accelerate cellular and tissue aging. This product contains a blend of nearly 20 plants known for their antioxidant properties, supporting overall health, slowing aging processes, and helping combat oxidative stress, including that caused by exposure to strong sun.</p>
+            </div>
+        </div>
+
+        <div class="details-block">
+            <p>All three products have a delicate, slightly sweet taste of natural honey (in the vegan version, agave syrup is used instead of honey) with the aroma of Indian spices and herbs, and contain complete plant-based pea protein along with a balanced composition of plant fats, optimized for omega-3 and omega-6 content.</p>
+            <p>To enhance the bioavailability of active compounds, plant raw materials undergo a complex pre-processing using traditional non-industrial techniques, including maceration with coconut oil, grinding oil seeds into a paste, soaking to remove antinutrients, and gentle drying for moisture removal and sanitation. We do not use high-speed industrial mills or equipment that could destroy bioactive compounds.</p>
+            <p>Suitable for vegans (please note that both vegan and non-vegan versions are available). Sugar-free. Gluten-free. Non-GMO. Contains no artificial flavor enhancers, colorings, preservatives, or other ultra-processed ingredients.</p>
+            <p>Provides your body with all essential nutrients, micronutrients, and bioactive substances in their natural form and highest possible concentration.</p>
+            <p><span class="highlight">An ideal choice for supporting the body's activity and performance in a fast-paced, high-stress lifestyle!</span></p>
+        </div>
+
+        <div class="ingredients">
+            <strong>Ingredients:</strong> Pea protein, sesame, pecan, flaxseed, chia seeds, walnut, Brazil nut, cashew, hazelnut, pumpkin seeds, cinnamon, turmeric, ginger, coconut oil, stevia, nutmeg, lemon balm, mint, lemongrass, echinacea, nettle, aloe vera, oregano, wormwood, linden, sage, neem, St. John's wort, dandelion, anise, cardamom, cumin, clove, black pepper, fennel, thyme, coriander, black cumin, dried apricot, kiwi, cranberry, Himalayan salt
+        </div>
+
+        <div class="nutrition">
+            <h4>Daily intake (3 servings)</h4>
+            <p>protein 15 g, fat 23 g, carbohydrates 25 g, fiber 18 g, calories 370 kcal</p>
+        </div>
+
+        <div class="disclaimer">
+            This is a food product. Contains plant ingredients known for their health benefits but is not a medicine and is not intended to treat or prevent diseases. If you have health concerns, consult your physician.
+        </div>
+    </div>
+</section>
+
+<!-- Set 4 -->
+<section class="set-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="set-number">Set 4</div>
+            <h2>Plant-based snacks for anti-stress support and relaxation</h2>
+            <div class="subtitle">Recommended daily intake – 3 servings (90 g)</div>
+        </div>
+
+        <div class="set-intro">
+            <div class="set-desc">Option 1. Mood stabilization and stress support: Equilibrio Feliz – 2 servings, Noche Tranquila – 1 serving</div>
+            <div class="set-desc" style="margin-top:0.5rem;">Option 2. Sleep support and stress relief: Equilibrio Feliz – 1 serving, Noche Tranquila – 2 servings</div>
+        </div>
+
+        <div class="packaging">
+            <h4>Packaging options</h4>
+            <p>Pack of 15 pcs. &nbsp;|&nbsp; Pack of 9 pcs.</p>
+        </div>
+
+        <div class="image-full">
+            <img src="n4.png" alt="Set 4 mixed box">
+        </div>
+
+        <div class="overview">
+            <h3>Overview</h3>
+            <ul>
+                <li>A delicate, slightly sweet taste with a rich aroma of spices and herbs makes this product a perfect dessert, ideally paired with coffee, tea, and refreshing fruit drinks.</li>
+                <li>A rich composition of natural plants, roots, herbs, and spices, widely used in culinary traditions and folk medicine across cultures, helps stabilize emotions, support hormonal balance, maintain emotional stability, promote relaxation, and improve sleep quality.</li>
+                <li>A light yet highly nutritious base makes this product an ideal snack — not only visually appealing and delicious, but also convenient, practical, compact, and easy to store.</li>
+                <li>Contains only natural plant-based ingredients. The exact composition of bioactive compounds may vary depending on growing conditions. Health benefits are not confirmed by medical studies.</li>
+            </ul>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <h3>Equilibrio Feliz</h3>
+                <p>An anti-stress product. The formulation includes cocoa, cinnamon, nutmeg, ashwagandha, maca, pollen, and medicinal herbs.</p>
+                <p style="margin-top:1rem;">This composition helps stabilize emotional state and improve mood. It supports the production of serotonin and dopamine, reduces anxiety levels, provides a mild energizing and balancing effect, lowers cortisol levels, and increases overall energy.</p>
+            </div>
+            <div class="product-card">
+                <h3>Noche Tranquila</h3>
+                <p>A sleep-support product. Contains a unique blend of more than 15 plants, herbs, spices, roots, and fruits that promote muscle relaxation, help stabilize emotional states, support calmness, reduce anxiety and tension, lower stress levels, and improve sleep quality.</p>
+            </div>
+        </div>
+
+        <div class="details-block">
+            <p>Both products have a delicate, slightly sweet taste of natural honey (in the vegan version, agave syrup is used instead of honey) with the aroma of Indian spices and herbs, and contain complete plant-based pea protein along with a balanced composition of plant fats, optimized for omega-3 and omega-6 content.</p>
+            <p>To enhance the bioavailability of active compounds, plant raw materials undergo a complex pre-processing using traditional non-industrial techniques, including maceration with coconut oil, grinding oil seeds into a paste, soaking to remove antinutrients, and gentle drying for moisture removal and sanitation. We do not use high-speed industrial mills or equipment that could destroy bioactive compounds.</p>
+            <p>Suitable for vegans (please note that both vegan and non-vegan versions are available). Sugar-free. Gluten-free. Non-GMO. Contains no artificial flavor enhancers, colorings, preservatives, or other ultra-processed ingredients.</p>
+            <p>Provides your body with all essential nutrients, micronutrients, and bioactive substances in their natural form and highest possible concentration.</p>
+            <p><span class="highlight">An ideal choice for supporting the body's activity and performance in a fast-paced, high-stress lifestyle!</span></p>
+        </div>
+
+        <div class="ingredients">
+            <strong>Ingredients:</strong> Pea protein, sesame, pecan, flaxseed, chia seeds, walnut, Brazil nut, cashew, hazelnut, sunflower seeds, pumpkin seeds, cocoa, cinnamon, ginger, coconut oil, stevia, nutmeg, maca, ashwagandha, gotu kola, ginkgo biloba, lemon balm, mint, jasmine, lemongrass, echinacea, chamomile, valerian root, basil, linden, sage, neem, St. John's wort, passionflower, anise, cardamom, clove, fennel, black cumin, dried apricot, kiwi, cranberry, Himalayan salt
+        </div>
+
+        <div class="nutrition">
+            <h4>Daily intake (3 servings)</h4>
+            <p>protein 10 g, fat 22 g, carbohydrates 28 g, fiber 15 g, calories 328 kcal</p>
+        </div>
+
+        <div class="disclaimer">
+            This is a food product. Contains plant ingredients known for their health benefits but is not a medicine and is not intended to treat or prevent diseases. If you have health concerns, consult your physician.
+        </div>
+    </div>
+</section>
+
+<!-- Set 5 -->
+<section class="set-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="set-number">Set 5</div>
+            <h2>Plant-based snacks for weight management and nutritional balance</h2>
+            <div class="subtitle">Recommended daily intake – 5 servings (150 g)</div>
+        </div>
+
+        <div class="set-intro">
+            <div class="set-desc">Proteína Umami – 1 serving &nbsp;|&nbsp; Minerales Rojos – 1 serving &nbsp;|&nbsp; Minerales Verdes – 1 serving &nbsp;|&nbsp; Equilibrio Feliz – 1 serving &nbsp;|&nbsp; Foco Vital – 1 serving</div>
+        </div>
+
+        <div class="packaging">
+            <h4>Packaging options</h4>
+            <p>Pack of 15 pcs.</p>
+        </div>
+
+        <div class="image-gallery">
+            <img src="n5_1.png" alt="Set 5 full box">
+            <img src="n5_2.png" alt="Set 5 plate presentation">
+        </div>
+
+        <div class="overview">
+            <h3>Overview</h3>
+            <ul>
+                <li>The set combines a unique range of flavors — a deep, natural umami taste with notes of sweetness, saltiness, and spice, along with a delicate moderately sweet flavor with hints of cocoa, cinnamon, and tropical fruits.</li>
+                <li>Providing the body with all essential nutrients, maintaining energy levels, and avoiding emotional stress during weight loss is a complex challenge. This set includes everything needed to lose weight comfortably without physical or emotional discomfort.</li>
+                <li>Contains no synthesized or isolated additives or extracts. Only natural plant ingredients processed using traditional methods to preserve their benefits and improve absorption.</li>
+            </ul>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <h3>Proteína Umami</h3>
+                <p><span class="highlight">Contains more protein with an ideal amino acid profile than meat!</span> The use of MCT oil as an energy source with very low carbohydrate content makes this product an ideal solution for an active lifestyle.</p>
+            </div>
+            <div class="product-card">
+                <h3>Minerales Verdes & Minerales Rojos</h3>
+                <p>A high content of dehydrated vegetables and seaweed makes these products a highly concentrated source of essential minerals and vitamins in their natural form and in sufficient quantities. Significant amounts of natural dietary fiber support healthy digestion and support the body's natural detox processes.</p>
+            </div>
+            <div class="product-card">
+                <h3>Foco Vital</h3>
+                <p>Contains a carefully selected blend of plants with adaptogenic properties, including ginseng, eleuthero, rhodiola, gotu kola, ginkgo biloba, schisandra, pollen, maca, and ashwagandha. This product supports mental and physical performance, helps reduce the effects of stress, improves metabolism, and helps combat fatigue. It also supports concentration, memory, cognitive clarity, immune function, and helps regulate blood sugar and hormonal balance.</p>
+                <p style="margin-top:1rem;">The dosage is designed to avoid sharp stimulation and is intended for long-term support and prevention rather than acute effects. Suitable for continuous use. If a stronger effect is desired, up to 2 servings per day can be consumed; however, after 3–4 weeks, a break of 1–2 weeks is recommended.</p>
+            </div>
+            <div class="product-card">
+                <h3>Equilibrio Feliz</h3>
+                <p>A composition including cocoa, cinnamon, nutmeg, ashwagandha, maca, pollen, and medicinal herbs. Supports emotional balance and improves mood. Stimulates serotonin and dopamine production, reduces anxiety, provides a mild energizing and stabilizing effect, lowers cortisol levels, and supports energy levels.</p>
+            </div>
+        </div>
+
+        <div class="details-block">
+            <p>Pre-processing with natural plant enzymes improves protein absorption, supporting metabolism — a key factor for weight management.</p>
+            <p>Using MCT oil as the primary energy source instead of carbohydrates helps prevent fatigue and sluggishness even with reduced calorie intake.</p>
+            <p>Hunger is often associated with mineral deficiencies in modern diets. The increased quantity and variety of vegetables in this set help provide essential minerals with minimal calorie intake.</p>
+            <p>Reducing overall food intake can slow digestion. This may lead not only to digestive discomfort but also to toxin buildup. The significantly higher fiber content in this set helps support efficient digestion and elimination.</p>
+            <p>High levels of natural plant fiber support healthy digestion, support the body's natural detox processes, and enhance gut microbiota health.</p>
+            <p>During weight loss, energy levels and performance may decrease. A balanced combination of natural adaptogens and stimulants helps maintain and even improve energy, focus, and productivity despite reduced food intake.</p>
+            <p>Food is not only fuel but also an important factor in emotional balance. Calorie restriction may lead to irritability, anxiety, or low mood. The high content of natural cocoa and other plant-based mood-supporting compounds helps make the weight loss process smoother and more emotionally stable.</p>
+            <p>To enhance bioavailability of active compounds, plant ingredients undergo complex pre-processing using traditional non-industral techniques, including maceration with coconut oil, grinding oil seeds into a paste, soaking to remove antinutrients, and gentle drying for moisture removal and sanitation. We do not use high-speed industrial mills or equipment that could destroy bioactive compounds.</p>
+            <p>Suitable for vegans. Sugar-free. Gluten-free. Non-GMO. Contains no artificial flavor enhancers, colorings, preservatives, or other ultra-processed ingredients.</p>
+            <p>Provides your body with all essential nutrients, micronutrients, and bioactive substances in their natural form and highest possible concentration. Maximum benefits per calorie!</p>
+            <p><span class="highlight">An ideal choice for comfortable weight management without hunger, weakness, or emotional stress!</span></p>
+        </div>
+
+        <div class="ingredients">
+            <strong>Ingredients:</strong> Pea protein, nutritional yeast, sesame, pecan, flaxseed, chia seeds, pumpkin seeds, sunflower seeds, MCT oil, carrot, beetroot, tomato, spinach, broccoli, celery, spirulina, nopal, artichoke, shiitake, onion, white garlic, black garlic, oregano, basil, cumin, rosemary, black pepper, fennel, thyme, caraway, coriander, black cumin, stevia, nutmeg, cinnamon, cocoa, turmeric, ginger, maca, ashwagandha, ginseng, rhodiola, gotu kola, ginkgo biloba, lemon balm, mint, lemongrass, echinacea, chamomile, valerian root, linden, sage, neem, St. John's wort, passionflower, anise, cardamom, clove, dried apricot, kiwi, cranberry, Himalayan salt
+        </div>
+
+        <div class="nutrition">
+            <h4>Daily intake (5 servings)</h4>
+            <p>protein 33 g, fat 43 g (including 9 g MCT), carbohydrates 16 g, fiber 52 g, calories 590 kcal.</p>
+        </div>
+
+        <div class="disclaimer">
+            This is a food product. Contains plant ingredients known for their health benefits but is not a medicine and is not intended to treat or prevent diseases. If you have health concerns, consult your physician.
+        </div>
+    </div>
+</section>
+
+<!-- Packaging Gallery -->
+<section style="background: var(--warm-white);">
+    <div class="container">
+        <div class="section-header">
+            <h2>Thoughtfully Packaged</h2>
+            <div class="subtitle">Eco-friendly craft boxes with natural twine</div>
+        </div>
+        <div class="image-gallery">
+            <img src="u3.jpg" alt="Box with window">
+            <img src="u4.jpg" alt="Gift box with twine">
+            <img src="u5.jpg" alt="Small gift box">
+            <img src="u6.jpg" alt="Two boxes on wood">
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="brand">Ultimafood</div>
+    <div class="tagline">Maximum benefits per calorie!</div>
+    <div class="values">
+        Premium foods. Homemade with love. 100% handmade.<br>
+        100% natural ingredients. Balanced nutrient composition.<br>
+        Rich in vitamins, minerals, and bioactive compounds.<br>
+        Traditional techniques. Handcrafted from carefully selected raw ingredients<br>
+        without industrial processing or ultra-processed additives.
+    </div>
+</footer>
+
+</body>
+</html>
