@@ -224,14 +224,14 @@
         }
 
         .video-item {
-            flex: 0 0 220px;
+            flex: 0 0 180px;
             text-align: center;
         }
 
         .video-item video {
             width: 100%;
             height: 320px;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 4px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
         }
@@ -247,10 +247,10 @@
 
         @media (max-width: 768px) {
             .video-item {
-                flex: 0 0 160px;
+                flex: 0 0 140px;
             }
             .video-item video {
-                height: 240px;
+                height: 250px;
             }
         }
 
