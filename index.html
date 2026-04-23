@@ -102,16 +102,30 @@
             text-transform: uppercase;
         }
 
-        .hero-img {
+        .hero-images {
             margin-top: 3rem;
-            max-width: 700px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
             width: 100%;
         }
 
-        .hero-img img {
+        .hero-images img {
             width: 100%;
+            height: 400px;
+            object-fit: cover;
             border-radius: 4px;
             box-shadow: 0 20px 60px rgba(44, 36, 22, 0.12);
+        }
+
+        @media (max-width: 768px) {
+            .hero-images {
+                grid-template-columns: 1fr;
+            }
+            .hero-images img {
+                height: 350px;
+            }
         }
 
         /* Sections */
@@ -407,12 +421,16 @@
             box-shadow: 0 4px 15px rgba(44, 36, 22, 0.08);
         }
 
-        .image-full {
-            margin: 2rem 0;
+        .image-single {
+            margin: 2rem auto;
+            max-width: 600px;
         }
 
-        .image-full img {
+        .image-single img {
             width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
             border-radius: 2px;
             box-shadow: 0 8px 30px rgba(44, 36, 22, 0.1);
         }
@@ -491,8 +509,9 @@
     <div class="hero-values">
         Premium foods. Homemade with love. 100% handmade. 100% natural ingredients. Balanced nutrient composition. Rich in vitamins, minerals, and bioactive compounds. Traditional techniques. Handcrafted from carefully selected raw ingredients without industrial processing or ultra-processed additives.
     </div>
-    <div class="hero-img">
+    <div class="hero-images">
         <img src="u1.jpg" alt="Ultimafood artisan snacks with tea">
+        <img src="u2.jpg" alt="Artisan snacks presentation">
     </div>
 </section>
 
@@ -542,7 +561,6 @@
 
         <div class="image-gallery">
             <img src="n1.png" alt="Set 1 products">
-            <img src="u2.jpg" alt="Artisan snacks presentation">
         </div>
 
         <div class="overview">
@@ -754,7 +772,7 @@
             <p>Pack of 15 pcs. &nbsp;|&nbsp; Pack of 9 pcs.</p>
         </div>
 
-        <div class="image-full">
+        <div class="image-single">
             <img src="n4.png" alt="Set 4 mixed box">
         </div>
 
