@@ -192,53 +192,65 @@
             color: rgba(247, 243, 237, 0.85);
         }
 
-        .philosophy-content {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 3rem auto 0;
-            align-items: start;
-        }
-
         .philosophy-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 3rem auto 0;
         }
 
-        .philosophy-video {
+        .philosophy-videos {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(184, 149, 106, 0.3);
+        }
+
+        .philosophy-videos h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .video-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .video-item {
+            flex: 0 0 220px;
             text-align: center;
         }
 
-        .philosophy-video video {
+        .video-item video {
             width: 100%;
-            max-width: 300px;
+            height: 320px;
+            object-fit: cover;
             border-radius: 4px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
         }
 
-        .philosophy-video-label {
+        .video-item-label {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-style: italic;
-            color: var(--gold);
-            margin-top: 1rem;
-            letter-spacing: 0.05em;
+            color: rgba(247, 243, 237, 0.7);
+            margin-top: 0.75rem;
+            letter-spacing: 0.03em;
         }
 
         @media (max-width: 768px) {
-            .philosophy-content {
-                grid-template-columns: 1fr;
+            .video-item {
+                flex: 0 0 160px;
             }
-            .philosophy-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .philosophy-video {
-                margin-top: 2rem;
-            }
-            .philosophy-video video {
-                max-width: 250px;
+            .video-item video {
+                height: 240px;
             }
         }
 
@@ -568,30 +580,46 @@
     <div class="container">
         <h2>Our Philosophy</h2>
         <p>To enhance the bioavailability of active compounds, plant raw materials undergo a complex pre-processing using traditional non-industrial techniques, including maceration with coconut oil, grinding oil seeds into a paste, soaking to remove antinutrients, and gentle drying for moisture removal and sanitation. We do not use high-speed industrial mills or equipment that could destroy bioactive compounds.</p>
-        <div class="philosophy-content">
-            <div class="philosophy-grid">
-                <div class="philosophy-item">
-                    <h4>100% Natural</h4>
-                    <p>No artificial flavor enhancers, colorings, preservatives, or ultra-processed ingredients</p>
-                </div>
-                <div class="philosophy-item">
-                    <h4>Handcrafted</h4>
-                    <p>Traditional techniques from carefully selected raw ingredients</p>
-                </div>
-                <div class="philosophy-item">
-                    <h4>Balanced</h4>
-                    <p>Complete nutrients, micronutrients, and bioactive substances in natural form</p>
-                </div>
-                <div class="philosophy-item">
-                    <h4>Vegan Friendly</h4>
-                    <p>Suitable for vegans. Sugar-free. Gluten-free. Non-GMO.</p>
-                </div>
+        <div class="philosophy-grid">
+            <div class="philosophy-item">
+                <h4>100% Natural</h4>
+                <p>No artificial flavor enhancers, colorings, preservatives, or ultra-processed ingredients</p>
             </div>
-            <div class="philosophy-video">
-                <video autoplay muted loop playsinline>
-                    <source src="process.mp4" type="video/mp4">
-                </video>
-                <div class="philosophy-video-label">Our Process — Traditional techniques in action</div>
+            <div class="philosophy-item">
+                <h4>Handcrafted</h4>
+                <p>Traditional techniques from carefully selected raw ingredients</p>
+            </div>
+            <div class="philosophy-item">
+                <h4>Balanced</h4>
+                <p>Complete nutrients, micronutrients, and bioactive substances in natural form</p>
+            </div>
+            <div class="philosophy-item">
+                <h4>Vegan Friendly</h4>
+                <p>Suitable for vegans. Sugar-free. Gluten-free. Non-GMO.</p>
+            </div>
+        </div>
+
+        <div class="philosophy-videos">
+            <h3>See Our Process in Action</h3>
+            <div class="video-row">
+                <div class="video-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="process.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-item-label">Traditional preparation</div>
+                </div>
+                <div class="video-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="video1.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-item-label">Careful crafting</div>
+                </div>
+                <div class="video-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="video5.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-item-label">Final touch</div>
+                </div>
             </div>
         </div>
     </div>
