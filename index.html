@@ -192,12 +192,54 @@
             color: rgba(247, 243, 237, 0.85);
         }
 
+        .philosophy-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            align-items: start;
+        }
+
         .philosophy-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            margin: 3rem auto 0;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .philosophy-video {
+            text-align: center;
+        }
+
+        .philosophy-video video {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .philosophy-video-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--gold);
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 768px) {
+            .philosophy-content {
+                grid-template-columns: 1fr;
+            }
+            .philosophy-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .philosophy-video {
+                margin-top: 2rem;
+            }
+            .philosophy-video video {
+                max-width: 250px;
+            }
         }
 
         .philosophy-item {
@@ -526,22 +568,30 @@
     <div class="container">
         <h2>Our Philosophy</h2>
         <p>To enhance the bioavailability of active compounds, plant raw materials undergo a complex pre-processing using traditional non-industrial techniques, including maceration with coconut oil, grinding oil seeds into a paste, soaking to remove antinutrients, and gentle drying for moisture removal and sanitation. We do not use high-speed industrial mills or equipment that could destroy bioactive compounds.</p>
-        <div class="philosophy-grid">
-            <div class="philosophy-item">
-                <h4>100% Natural</h4>
-                <p>No artificial flavor enhancers, colorings, preservatives, or ultra-processed ingredients</p>
+        <div class="philosophy-content">
+            <div class="philosophy-grid">
+                <div class="philosophy-item">
+                    <h4>100% Natural</h4>
+                    <p>No artificial flavor enhancers, colorings, preservatives, or ultra-processed ingredients</p>
+                </div>
+                <div class="philosophy-item">
+                    <h4>Handcrafted</h4>
+                    <p>Traditional techniques from carefully selected raw ingredients</p>
+                </div>
+                <div class="philosophy-item">
+                    <h4>Balanced</h4>
+                    <p>Complete nutrients, micronutrients, and bioactive substances in natural form</p>
+                </div>
+                <div class="philosophy-item">
+                    <h4>Vegan Friendly</h4>
+                    <p>Suitable for vegans. Sugar-free. Gluten-free. Non-GMO.</p>
+                </div>
             </div>
-            <div class="philosophy-item">
-                <h4>Handcrafted</h4>
-                <p>Traditional techniques from carefully selected raw ingredients</p>
-            </div>
-            <div class="philosophy-item">
-                <h4>Balanced</h4>
-                <p>Complete nutrients, micronutrients, and bioactive substances in natural form</p>
-            </div>
-            <div class="philosophy-item">
-                <h4>Vegan Friendly</h4>
-                <p>Suitable for vegans. Sugar-free. Gluten-free. Non-GMO.</p>
+            <div class="philosophy-video">
+                <video autoplay muted loop playsinline>
+                    <source src="process.mp4" type="video/mp4">
+                </video>
+                <div class="philosophy-video-label">Our Process — Traditional techniques in action</div>
             </div>
         </div>
     </div>
